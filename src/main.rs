@@ -77,7 +77,7 @@ fn main() {
 
 /**
 * Shift a character by a value equal to an alphabetic position
-* where A + 1 = B, B + 2 = E, etc.
+* where A + 1 = B, B + 2 = D, etc.
 *
 * Note values overflow, so Z + 1 wraps back to A
 *
