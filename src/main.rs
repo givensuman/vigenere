@@ -31,10 +31,20 @@ fn main() {
         }
         false => {
             // File input argument provided, read from that
-            File::open(args.input)
-                .unwrap()
-                .read_to_string(&mut input)
-                .unwrap();
+            let file = File::open(args.input);
+
+            match file {
+                Ok(mut f) => {
+                    f.read_to_string(&mut input).unwrap();
+                }
+                Err(_) => {
+                    println!("I could not read the file you provided.");
+                    std::process::exit(1);
+                }
+            };
+            // .unwrap()
+            // .read_to_string(&mut input)
+            // .unwrap();
         }
     };
 
